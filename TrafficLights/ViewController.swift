@@ -15,6 +15,9 @@ final class ViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
+    private let alphaOn: CGFloat = 1
+    private let alphaOff: CGFloat = 0.3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,24 +29,26 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func pushingButton(_ sender: UIButton) {
-        startButton.setTitle("NEXT", for: .normal)
         
-        if redLightView.alpha < 1 && yellowLightView.alpha < 1 && greenLightView.alpha < 1 {
-            redLightView.alpha = 1
-        } else if redLightView.alpha == 1 {
-            redLightView.alpha = 0.3
-            yellowLightView.alpha = 1
-        } else if yellowLightView.alpha == 1 {
-            yellowLightView.alpha = 0.3
-            greenLightView.alpha = 1
-        } else if greenLightView.alpha == 1 {
-            greenLightView.alpha = 0.3
-            redLightView.alpha = 1
+        if redLightView.alpha < alphaOn,
+            yellowLightView.alpha < alphaOn, 
+            greenLightView.alpha < alphaOn {
+            startButton.setTitle("NEXT", for: .normal)
+            redLightView.alpha = alphaOn
+        } else if redLightView.alpha == alphaOn {
+            redLightView.alpha = alphaOff
+            yellowLightView.alpha = alphaOn
+        } else if yellowLightView.alpha == alphaOn {
+            yellowLightView.alpha = alphaOff
+            greenLightView.alpha = alphaOn
+        } else if greenLightView.alpha == alphaOn {
+            greenLightView.alpha = alphaOff
+            redLightView.alpha = alphaOn
         }
     }
     
     private func cornerRadiusSet(for view: UIView) {
-        view.layer.cornerRadius = 75
+        view.layer.cornerRadius = view.frame.width / 2
     }
     
 }
