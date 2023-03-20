@@ -52,7 +52,7 @@ final class ViewController: UIViewController {
     
     // MARK: - Private Functions
     private func cornerRadiusSet(for view: UIView) {
-        view.layer.cornerRadius = view.frame.height / 2
+        view.layer.cornerRadius = view.frame.width / 2
     }
     
 }
