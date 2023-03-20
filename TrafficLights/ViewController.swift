@@ -8,16 +8,18 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
+    // MARK: - IBOutlets
     @IBOutlet weak var redLightView: UIView!
     @IBOutlet weak var yellowLightView: UIView!
     @IBOutlet weak var greenLightView: UIView!
     
     @IBOutlet weak var startButton: UIButton!
     
-    private let alphaOn: CGFloat = 1
+    // MARK: - Private Properties
+    private let alphaOn: CGFloat = 1.0
     private let alphaOff: CGFloat = 0.3
     
+    // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,7 @@ final class ViewController: UIViewController {
         startButton.layer.cornerRadius = 10
     }
     
+    // MARK: - IBActions
     @IBAction func pushingButton(_ sender: UIButton) {
         
         if redLightView.alpha < alphaOn,
@@ -47,8 +50,9 @@ final class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Private Functions
     private func cornerRadiusSet(for view: UIView) {
-        view.layer.cornerRadius = view.frame.width / 2
+        view.layer.cornerRadius = view.frame.height / 2
     }
     
 }
