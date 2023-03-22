@@ -13,6 +13,8 @@ final class ViewController: UIViewController {
     @IBOutlet weak var yellowLightView: UIView!
     @IBOutlet weak var greenLightView: UIView!
     
+    @IBOutlet weak var messageLabel: UILabel!
+    
     @IBOutlet weak var startButton: UIButton!
     
     // MARK: - Private Properties
@@ -24,6 +26,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        messageLabel.isHidden.toggle()
         startButton.layer.cornerRadius = 10
     }
     
@@ -37,6 +40,7 @@ final class ViewController: UIViewController {
     @IBAction func pushingButton() {
         if startButton.currentTitle == "START" {
             startButton.setTitle("NEXT", for: .normal)
+            messageLabel.isHidden.toggle()
         }
         
         switch currentLight {
@@ -45,18 +49,21 @@ final class ViewController: UIViewController {
                 self.greenLightView.alpha = self.lightIsOff
                 self.redLightView.alpha = self.lightIsOn
             }
+            messageLabel.text = "STOP"
             currentLight = .yellow
         case.yellow:
             UIView.animate(withDuration: 0.5) {
                 self.redLightView.alpha = self.lightIsOff
                 self.yellowLightView.alpha = self.lightIsOn
             }
+            messageLabel.text = "WAIT"
             currentLight = .green
         case .green:
             UIView.animate(withDuration: 0.5) {
                 self.yellowLightView.alpha = self.lightIsOff
                 self.greenLightView.alpha = self.lightIsOn
             }
+            messageLabel.text = "GO"
             currentLight = .red
         }
     }
