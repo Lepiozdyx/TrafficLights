@@ -41,16 +41,22 @@ final class ViewController: UIViewController {
         
         switch currentLight {
         case .red:
-            greenLightView.alpha = lightIsOff
-            redLightView.alpha = lightIsOn
+            UIView.animate(withDuration: 0.5) {
+                self.greenLightView.alpha = self.lightIsOff
+                self.redLightView.alpha = self.lightIsOn
+            }
             currentLight = .yellow
         case.yellow:
-            redLightView.alpha = lightIsOff
-            yellowLightView.alpha = lightIsOn
+            UIView.animate(withDuration: 0.5) {
+                self.redLightView.alpha = self.lightIsOff
+                self.yellowLightView.alpha = self.lightIsOn
+            }
             currentLight = .green
         case .green:
-            yellowLightView.alpha = lightIsOff
-            greenLightView.alpha = lightIsOn
+            UIView.animate(withDuration: 0.5) {
+                self.yellowLightView.alpha = self.lightIsOff
+                self.greenLightView.alpha = self.lightIsOn
+            }
             currentLight = .red
         }
     }
