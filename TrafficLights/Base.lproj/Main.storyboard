@@ -49,9 +49,15 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="pushingButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ATn-0N-Ad4"/>
+                                    <action selector="pushingButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQN-pS-vLf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ye-h5-wmN">
+                                <rect key="frame" x="124.5" y="404" width="71.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,12 +67,15 @@
                             <constraint firstItem="Hq7-3C-Y7f" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.570423" id="CHz-yX-6XX"/>
                             <constraint firstItem="Hq7-3C-Y7f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F6k-1s-T60"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KUW-g1-a3G" secondAttribute="bottom" constant="20" id="Hd7-2a-qQk"/>
+                            <constraint firstItem="5Ye-h5-wmN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WDK-kb-eVX"/>
+                            <constraint firstItem="5Ye-h5-wmN" firstAttribute="top" secondItem="Hq7-3C-Y7f" secondAttribute="bottom" constant="60" id="xFK-Ec-PjL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="greenLightView" destination="Ntc-Pw-dsJ" id="7ZG-Eo-vvZ"/>
+                        <outlet property="messageLabel" destination="5Ye-h5-wmN" id="Pc7-SO-7eU"/>
                         <outlet property="redLightView" destination="I21-9Q-hvT" id="y3K-QM-UE6"/>
-                        <outlet property="startButton" destination="KUW-g1-a3G" id="McM-Is-61i"/>
+                        <outlet property="startButton" destination="KUW-g1-a3G" id="x43-Fr-Orw"/>
                         <outlet property="yellowLightView" destination="mzk-YG-4ou" id="9Fw-0D-aKr"/>
                     </connections>
                 </viewController>
