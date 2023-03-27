@@ -1,6 +1,6 @@
 # Traffic Light App
 
-This is a simple tutorial iOS application written in Swift that simulates a traffic light. The user can tap the "START" button to switch the light from red to green via a yellow intermediate state. The app also displays a message that corresponds to the current color of the light.
+*This is a simple tutorial iOS application written in Swift that simulates a traffic light. The user can tap the "START" button to switch the light from red to green via a yellow intermediate state. The app also displays a message that corresponds to the current color of the light.*
 
 **Tech Stack**
 
